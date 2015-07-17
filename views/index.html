@@ -9,11 +9,12 @@
     <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/javascripts/jquery.idcode.js"></script>    
     <script>
-$(document).ready(function(){
- $.idcode.setCode();
-});
-function check()
-{
+    $(document).ready(function(){
+    $.idcode.setCode();
+    });
+    
+    function check()
+    {
 	if($("#name").val()=="" || $("#passwd").val()=="")
 	{
 		alert("用户名或密码不能为空!");
@@ -30,12 +31,12 @@ function check()
 			alert("验证码错误!");	
 		}	
 	}
-}
+     }
 </script>    
   </head>
   <body>
   <div class="container-fluid">
-	<form class="form-horizontal" method="post" action="check_user.php" id="loginForm">
+	<form class="form-horizontal" method="post" action="/doLogin" id="loginForm">
 	  <fieldset>
 	    <legend>用户登陆</legend>
 	    <div class="control-group">
