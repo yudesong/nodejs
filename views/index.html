@@ -2,14 +2,40 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href="/stylesheets/style.css"/>
+    <link rel='stylesheet' href="/stylesheets/bootstrap.min.css"/>
+    <link rel='stylesheet' href="/stylesheets/jquery.idcode.css"/>    
     <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
     <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.idcode.js"></script>    
+    <script>
+$(document).ready(function(){
+ $.idcode.setCode();
+});
+function check()
+{
+	if($("#name").val()=="" || $("#passwd").val()=="")
+	{
+		alert("用户名或密码不能为空!");
+	}else
+	{
+		if($.idcode.getCode()==$("#ehong-code-input").val())
+		{
+			$("#loginForm").submit();
+		}else if($("#ehong-code-input").val()=="")
+		{
+			alert("请输入验证码!");
+		}else
+		{
+			alert("验证码错误!");	
+		}	
+	}
+}
+</script>    
   </head>
   <body>
   <div class="container-fluid">
-	<form class="form-horizontal" method="post" action="check_user.php">
+	<form class="form-horizontal" method="post" action="check_user.php" id="loginForm">
 	  <fieldset>
 	    <legend>用户登陆</legend>
 	    <div class="control-group">
@@ -24,10 +50,16 @@
 	        <input type="password" class="input-xlarge" id="passwd" name="passwd">
 	      </div>
 	    </div>
-	    <div class="form-actions">
-	      <button type="submit" class="btn btn-primary">登陆</button>
-	      &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary">退出</button>		  
+	    <div class="control-group">
+	      <label class="control-label" for="password">验证码:</label>
+	      <div class="controls">
+	        <span id="idcode"></span>
+	      </div>
 	    </div>
+	    <div class="form-actions">
+	      <button type="button" class="btn btn-primary" onclick="check()">登陆</button>
+	      &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary">退出</button>
+	    </div>	    
 	  </fieldset>
 	</form>
  </div>
