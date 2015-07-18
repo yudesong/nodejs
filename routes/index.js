@@ -23,6 +23,6 @@ router.login = function(db){
      	  }
      	});
      }
-}
+};
 
 module.exports = router;

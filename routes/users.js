@@ -3,7 +3,18 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render("users",{"title":"用户列表"});
+     var mongo = require("mongodb"); 
+     var monk = require("monk");
+     var db = monk("localhost:27017/users");
+     var collection = db.get("usercollection");
+     collection.find({},function(err,docs){
+     if(!err){
+     	if(docs!=""){
+     	console.log(docs);
+     	res.render("users",{"users":docs});
+     	}
+     }
+     });
 });
 
 module.exports = router;
