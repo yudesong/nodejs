@@ -8,42 +8,50 @@
     <script type="text/javascript" src="/javascripts/amazeui.ie8polyfill.js"></script>
     <script type="text/javascript" src="/javascripts/amazeui.widgets.helper.js"></script>
 </head>  
-<body>  
-<table class="am-table am-table-bordered am-table-striped am-table-hover">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Sex</th>
-            <th>Age</th>
-            <th>Password</th>
-        </tr>
-    </thead>
-    <tbody>
-        	<%
-        	       var i;
-        	       for(i=0;i<users.length;i++)
-        	       {
-        	%>
-        	 <%
-        	        if(i%2==0){
-        	 %>
-        	       <tr class="am-primary">
-        	<%
-        	       }else{
-        	%>
-        	        <tr class="am-active">
-        	<%
-        	       }
-        	%>       
-        	            <td><%= users[i].name%></td>
-        	            <td><%= users[i].sex%></td>
-        	            <td><%= users[i].age%></td>
-        	            <td><%= users[i].passwd%></td>
-        	       </tr>
-        	<%
-        	       }
-        	%>
-    </tbody>
-</table>
+<body> 
+         <div style="width:70%;">
+         	<h3>User List</h3>
+	<table class="am-table am-table-bordered am-table-striped am-table-hover">
+	    <thead>
+	        <tr>
+	            <th>Name</th>
+	            <th>Sex</th>
+	            <th>Age</th>
+	            <th>Password</th>
+	            <th>Manage</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        	<%
+	        	       var i;
+	        	       for(i=0;i<users.length;i++)
+	        	       {
+	        	%>
+	        	 <%
+	        	        if(i%2==0){
+	        	 %>
+	        	       <tr class="am-primary">
+	        	<%
+	        	       }else{
+	        	%>
+	        	        <tr class="am-active">
+	        	<%
+	        	       }
+	        	%>       
+	        	            <td><%= users[i].name%></td>
+	        	            <td><%= users[i].sex%></td>
+	        	            <td><%= users[i].age%></td>
+	        	            <td><%= users[i].passwd%></td>
+	        	            <td>
+	        	            <a type="button" class="am-btn am-btn-secondary am-radius am-icon-edit">Edit</a>
+	        	            <a type="button" class="am-btn am-btn-danger am-radius am-icon-close">Delete</a>
+	        	            </td>
+	        	       </tr>
+	        	<%
+	        	       }
+	        	%>
+	    </tbody>
+	</table>
+       </div>	
 </body>
 </html>

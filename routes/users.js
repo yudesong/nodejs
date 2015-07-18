@@ -3,6 +3,10 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+      getUser(req,res);
+});
+
+function getUser(req,res){
      var mongo = require("mongodb"); 
      var monk = require("monk");
      var db = monk("localhost:27017/users");
@@ -15,6 +19,7 @@ router.get('/', function(req, res, next) {
      	}
      }
      });
-});
+}
+
 
 module.exports = router;
