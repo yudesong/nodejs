@@ -20,7 +20,7 @@ app.engine('.html',ejs.__express);
 var mongo = require("mongodb");
 var monk = require("monk");
 var db = monk("localhost:27017/users");
-
+var collection = db.get("usercollection");
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -31,7 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.post("/doLogin",routes.login(db));
+app.post("/doLogin",routes.login(db,collection));
+app.use("/delUser",users.delUser(collection));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

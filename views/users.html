@@ -42,9 +42,8 @@
 	        	            <td><%= users[i].sex%></td>
 	        	            <td><%= users[i].age%></td>
 	        	            <td><%= users[i].passwd%></td>
-	        	            <td>
-	        	            <a type="button" class="am-btn am-btn-secondary am-radius am-icon-edit">Edit</a>
-	        	            <a type="button" class="am-btn am-btn-danger am-radius am-icon-close">Delete</a>
+	        	            <td><a type="button" class="am-btn am-btn-secondary am-radius am-icon-edit" href="">Edit</a>
+	        	            <a type="button" class="am-btn am-btn-danger am-radius am-icon-close" href="delUser?_id=<%= users[i]._id%>">Delete</a>
 	        	            </td>
 	        	       </tr>
 	        	<%

@@ -7,11 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* login function*/
-router.login = function(db){
+router.login = function(db,collection){
      return function(req,res){
      	var name = req.body.name;
      	var passwd= req.body.passwd;
-     	var collection = db.get("usercollection");
      	collection.find({"name":name,"passwd":passwd},function(err,docs){
      	if(!err){
      	       if(docs!=""){
