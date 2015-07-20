@@ -10,36 +10,35 @@
 </head>  
 <body> 
          <div style="width:70%;">
-         <form class="am-form am-form-horizontal" method="post" action="/editUser">
+         <form class="am-form am-form-horizontal" action="/addUser" method="post">
          	<fieldset>
-         	    <legend>修改用户</legend>
+         	    <legend>添加用户</legend>
          	    <div class="am-form-group">
    	    	<label for="doc-ipt-3" class="am-u-sm-2 am-form-label">用户名</label>
     	    	<div class="am-u-sm-10">
-      	               <input type="text" name="_id" style="display:none" value="<%= user[0]._id%>"/>
-                      <input type="text" id="doc-ipt-3" name="name" style="width:200px;" placeholder="输入你的用户名" value="<%= user[0].name%>"></div>
+      	              <input type="text" id="doc-ipt-3" name="name" style="width:200px;" placeholder="输入你的用户名"></div>
     	    </div>
     	    <div class="am-form-group">
    	    	<label for="doc-ipt-3" class="am-u-sm-2 am-form-label">性别</label>
     	    	<div class="am-u-sm-10">
-      	          	<input type="text" id="doc-ipt-3" name="sex" style="width:200px;" placeholder="输入你的性别" value="<%= user[0].sex%>">
+      	          	<input type="text" id="doc-ipt-3"  name="sex" style="width:200px;" placeholder="输入你的性别">
     	    	</div>
     	    </div>
     	    <div class="am-form-group">	
    	    	<label for="doc-ipt-3" class="am-u-sm-2 am-form-label">年龄</label>
     	    	<div class="am-u-sm-10">
-      	          <input type="text" id="doc-ipt-3"name="age" style="width:200px;" placeholder="输入你的年龄" value="<%= user[0].age%>">
+      	          <input type="text" id="doc-ipt-3" name="age" style="width:200px;" placeholder="输入你的年龄">
     	    	</div>
     	    </div>	
     	    <div class="am-form-group">    	        	    
    	   	 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">密码</label>
     	   	 <div class="am-u-sm-10">
-      	         	 <input type="text" id="doc-ipt-3" name="passwd" style="width:200px;"  placeholder="输入你的密码" value="<%= user[0].passwd%>">
+      	         	 <input type="text" id="doc-ipt-3" name="passwd" style="width:200px;"  placeholder="输入你的密码">
     	    	</div>
     	    </div>
     	     <div class="am-form-group">
     		<div class="am-u-sm-10 am-u-sm-offset-2">
-      		<button type="submit" class="am-btn am-btn-primary">修改</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      		<button type="submit" class="am-btn am-btn-primary">添加</button>&nbsp;&nbsp;&nbsp;&nbsp;
       		<button type="reset" class="am-btn am-btn-primary">取消</button>
     		</div>
   	    </div>

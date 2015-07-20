@@ -31,9 +31,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.get("/addUser",users.addUser);
+app.post("/addUser",users.doAddUser(collection));
 app.post("/doLogin",routes.login(db,collection));
 app.use("/delUser",users.delUser(collection));
+app.post("/editUser",users.editUser(collection));
+app.get("/user",users.user(collection));
+app.post("/findUser",users.findUser(collection));
 
+
+
+
+//app.get("/addUser",users.addUser(collection));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

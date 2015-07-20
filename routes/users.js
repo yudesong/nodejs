@@ -9,16 +9,56 @@ router.get('/', function(req, res, next) {
       getUser(req,res);
 });
 
-router.get('/user',function(req,res,next){
-     var _id = req.query._id;
-     
-});
+router.user = function(collection){
+     return function(req,res){
+          var _id = req.query._id;
+          collection.find({"_id":_id},function(err,docs){
+               if(!err){
+                    if(docs!=""){
+                          res.render("user",{"user":docs});
+                    }
+               }
+          });
+     }
+};
+
+router.addUser = function(req,res){
+     res.render("adduser");
+};
+
+router.findUser = function(collection){
+     return function(req,res){
+          var name = req.body.name;
+          collection.find({"name":name},function(err,docs){
+               if(!err){
+                    if(docs!=""){
+                         res.render("users",{"users":docs});
+                    }
+               }
+          });
+     }
+};
+
+router.doAddUser = function(collection){
+     return function(req,res){
+          var name = req.body.name;
+          var sex = req.body.sex;
+          var age = req.body.age;
+          var passwd = req.body.passwd;
+          collection.insert({"name":name,"sex":sex,"age":age,"passwd":passwd},function(err,docs){
+               if(!err){
+                    if(docs!=""){
+                         res.redirect("users");
+                    } 
+               }
+          });
+     }
+};
 
 function getUser(req,res){
      collection.find({},function(err,docs){
      if(!err){
      	if(docs!=""){
-     	console.log(docs);
      	res.render("users",{"users":docs});
      	}
      }
@@ -29,22 +69,23 @@ function deleteUser(res,data,collection){
      collection.remove({"_id":data},function(err,docs){
      if(!err){
           if(docs!=""){
-          res.render("users",{"users":docs});
+          res.redirect("users");
           }
      }
      });
 }
 
-router.editUser = function(db,collection){
+router.editUser = function(collection){
      return function(req,res){
           var name = req.body.name;
           var sex = req.body.sex;
           var age = req.body.age;
+          var _id = req.body._id;
           var passwd = req.body.passwd;
-          collection.insert({"name":name,"sex":sex,"age":age,"passwd":passwd},function(err,docs){
+          collection.update({"_id":_id},{"name":name,"sex":sex,"age":age,"passwd":passwd},function(err,docs){
                if(!err){
                     if(docs!=""){
-                         res.render("/users");
+                         res.redirect("users");
                     } 
                }
           });
@@ -58,11 +99,5 @@ router.delUser = function(collection){
           deleteUser(res,_id,collection);
      }
 };
-
-router.editUser = function(db,collection){
-     return function(req,res){
-          req
-     }
-}
 
 module.exports = router;

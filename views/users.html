@@ -11,6 +11,10 @@
 <body> 
          <div style="width:70%;">
          	<h3>User List</h3>
+         	<div>
+         	<a type="button" class="am-btn am-btn-secondary am-icon-plus-circle" href="/adduser">添加</a>
+         	<form class="am-form" method="post" action="/findUser"><input type="text" placeholder="输入查找的用户名" name="name"><button type="submit">查找</button></form>
+	</div>
 	<table class="am-table am-table-bordered am-table-striped am-table-hover">
 	    <thead>
 	        <tr>
@@ -42,8 +46,8 @@
 	        	            <td><%= users[i].sex%></td>
 	        	            <td><%= users[i].age%></td>
 	        	            <td><%= users[i].passwd%></td>
-	        	            <td><a type="button" class="am-btn am-btn-secondary am-radius am-icon-edit" href="">Edit</a>
-	        	            <a type="button" class="am-btn am-btn-danger am-radius am-icon-close" href="delUser?_id=<%= users[i]._id%>">Delete</a>
+	        	            <td><a type="button" class="am-btn am-btn-secondary am-radius am-icon-edit" href="user?_id=<%= users[i]._id%>">修改</a>
+	        	            <a type="button" class="am-btn am-btn-danger am-radius am-icon-close" href="delUser?_id=<%= users[i]._id%>">删除</a>
 	        	            </td>
 	        	       </tr>
 	        	<%
