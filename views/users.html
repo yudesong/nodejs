@@ -12,8 +12,9 @@
          <div style="width:70%;">
          	<h3>User List</h3>
          	<div>
+         	<form  method="post" action="/findUser">
          	<a type="button" class="am-btn am-btn-secondary am-icon-plus-circle" href="/adduser">添加</a>
-         	<form class="am-form" method="post" action="/findUser"><input type="text" placeholder="输入查找的用户名" name="name"><button type="submit">查找</button></form>
+         	&nbsp;&nbsp;<input type="text" placeholder="输入查找的用户名" name="name"/>&nbsp;&nbsp;<button type="submit">查找</button></form>
 	</div>
 	<table class="am-table am-table-bordered am-table-striped am-table-hover">
 	    <thead>
@@ -26,6 +27,8 @@
 	        </tr>
 	    </thead>
 	    <tbody>
+	    	<% if(users!=""){
+	    	%>
 	        	<%
 	        	       var i;
 	        	       for(i=0;i<users.length;i++)
@@ -52,6 +55,7 @@
 	        	       </tr>
 	        	<%
 	        	       }
+	        	   }    
 	        	%>
 	    </tbody>
 	</table>

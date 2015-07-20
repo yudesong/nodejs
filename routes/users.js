@@ -31,9 +31,7 @@ router.findUser = function(collection){
           var name = req.body.name;
           collection.find({"name":name},function(err,docs){
                if(!err){
-                    if(docs!=""){
                          res.render("users",{"users":docs});
-                    }
                }
           });
      }
@@ -58,9 +56,7 @@ router.doAddUser = function(collection){
 function getUser(req,res){
      collection.find({},function(err,docs){
      if(!err){
-     	if(docs!=""){
      	res.render("users",{"users":docs});
-     	}
      }
      });
 }
@@ -68,9 +64,7 @@ function getUser(req,res){
 function deleteUser(res,data,collection){
      collection.remove({"_id":data},function(err,docs){
      if(!err){
-          if(docs!=""){
           res.redirect("users");
-          }
      }
      });
 }
@@ -95,7 +89,6 @@ router.editUser = function(collection){
 router.delUser = function(collection){
      return function(req,res){
           var _id = req.query._id;
-//          console.log(_id);
           deleteUser(res,_id,collection);
      }
 };
