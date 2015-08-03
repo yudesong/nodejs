@@ -14,7 +14,7 @@ router.login = function(db,collection){
      	collection.find({"name":name,"passwd":passwd},function(err,docs){
      	if(!err){
      	       if(docs!=""){
-                                   req.session.user = user;
+                           //        req.session.user = user;
                                    console.log(req.session.user);
      	       	res.redirect("/users");
      	       }else{
