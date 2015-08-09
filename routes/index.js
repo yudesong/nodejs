@@ -16,7 +16,7 @@ router.login = function(db,collection){
      	       if(docs!=""){
                            //        req.session.user = user;
                                    console.log(req.session.user);
-     	       	res.redirect("/users");
+     	       	res.redirect("/blog");
      	       }else{
      	       	res.redirect("/");
      	       }		

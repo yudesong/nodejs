@@ -7,121 +7,180 @@
     <script type="text/javascript" src="/javascripts/amazeui.js"></script>
     <script type="text/javascript" src="/javascripts/amazeui.ie8polyfill.js"></script>
     <script type="text/javascript" src="/javascripts/amazeui.widgets.helper.js"></script>
+    <script type="text/javascript" src="/javascripts/script.js"></script>
     <style type="text/css">
     body{
-    	background: #white;
+    	 background: #white;
+        width:1000px;
+        margin: 10px 120px;
     }
+
+    #head{
+        border-bottom: 1px solid #ccc;
+    }
+
+    #content #left a{
+        color: white;
+        display: block;
+        padding-left: 25px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    #content #left a:hover{
+        background: #80b9db
+    }
+
+    #left{
+      float: left;
+      background: #63a6d1;
+      margin-top: 20px;
+      width: 150px;
+    }
+
+    #right{
+      float: left;
+      margin-left: 30px;
+      margin-top: 10px;
+    }
+
+    #both{
+      clear: both;
+    }
+
     #blog{
-    	width:600px;
-    	font-size: 13px;
-    	margin-left: 300px;
-    	margin-top: 10px;
-    	border-bottom: 10px solid #00FFFF;
+       font-size: 13px;
+       width: 660px;
+       padding:3px;
+    	margin-top: 20px;
+       margin-bottom: 5px;
+       border-top:2px dashed #ccc;
     }
 
-    #head .user-img{
-    	float:left;
-    }
-    
-    #head .user-info{
-    	float:left;
-    	margin-left: 20px;
-    	padding: 5px;
-    	width:200px;
+    #blog .user_img{
+        float: left;
+        width: 80px;
+        height: 70px;
     }
 
-    #body{
-    	margin-left: 70px;
+    #blog .user_img img{
+      margin-top: 10px;
+      margin-left: 15px;
+      border-radius:78.5px 78.5px 78.5px 78.5px;
     }
 
-    #img{
-    	margin-left: 70px;
-    	margin-top: 10px;
-    	margin-bottom: 4px;
+    #blog .user_info{
+      float: left;
+      margin-top: 15px;
+    }
+    #blog .user_blog{
+      width: 570px;
     }
 
-    #foot{
-    	margin-top: 10px;
-	border-top: 1px solid #ccc;
+    #user_man a{
+      display: inline-block;
+      color: #000000;
+      width: 157px;
+      padding-left: 50px;
     }
 
-    #foot li{
-    	 display:inline;
-    	 margin:0px;
+    #user_man a:hover{
+      color: red;
     }
 
-    #foot .margin{
-	height:20px;
-	border-right: solid; 1px #ccc;
-	padding-left: 60px;
-	padding-right: 40px;
+    #fabu{
+      margin-left: 585px;
+      margin-top: 6px;
     }
 
-    #foot #zan{
-	width:100px;
-	height:20px;
-	padding-left: 40px;
-	padding-right: 40px;
+    #comment{
+      height: 100px;
+      margin-left: 40px;
+      margin-top: 10px;
+      background: #ccc;
+      padding:5px;
+      display: none;
+    }
+
+    #comment img{
+      width: 30px;
+      height: 30px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    #comment input{
+      margin-left: 20px;
+      margin-top: 10px;
+      width: 530px;
+      height: 30px;
+    }
+
+    #comment button{
+      margin-left: 522px;
+      margin-top: 6px;
     }
     </style>
 </head>  
-<body> 
-      <div style="width:70%;">
-     <!-- Example blog style   -->
-      <div id="blog">
-      	<div id="head">
-      		<div class="user-img"><img src="/images/user1.jpg"></div>
-      		<div class="user-info">
-      			<div id="user-name"><strong></strong>&nbsp;<img src="/images/V.png"></div>
-      		</div>
-      		<div style="clear:both"></div>
-      	</div>
-      	<div id="body">
-      		【什么是人脉】①人脉不是你利用多少人，而是你帮助多少人！②人脉不是多少人在面前吹捧你，而是多少人在背后称赞你！③人脉不是辉煌时多少人奉承你，而是落魄时多少人愿意帮助你！④人脉不是你认识多少人，而是多少人认识你！⑤人脉不是你和多少人打过交道，而是多少人愿意主动和你打交道！
-      	</div>
-      	<div id="img">
-      		<img src="/images/81e0ad86gw1eu9a00y1w1j20dw0dw74n.jpg">
-      	</div>
-      	<div id="foot">
-      		<ul>
-      			<li><a class="margin" type="button" href="#">收藏</a></li>
-      			<li><a class="margin" href="#">转发</a></li>
-      			<li><a class="margin" href="#">评论</a></li>
-      			<li><a  id="zan" href="#" class="am-icon-thumbs-o-up"></a></li>
-      		</ul>
-      	</div>
-      </div>
-      <div id="blog">
-      	<div id="head">
-      		<div class="user-img"><img src="/images/user1.jpg"></div>
-      		<div class="user-info">
-      			<div id="user-name"><strong>高顿财经</strong>&nbsp;<img src="/images/V.png"></div>
-      		</div>
-      		<div style="clear:both"></div>
-      	</div>
-      	<div id="body">
-      		【什么是人脉】①人脉不是你利用多少人，而是你帮助多少人！②人脉不是多少人在面前吹捧你，而是多少人在背后称赞你！③人脉不是辉煌时多少人奉承你，而是落魄时多少人愿意帮助你！④人脉不是你认识多少人，而是多少人认识你！⑤人脉不是你和多少人打过交道，而是多少人愿意主动和你打交道！
-      	</div>
-      	<div id="img">
-      		<img src="/images/81e0ad86gw1eu9a00y1w1j20dw0dw74n.jpg">
-      	</div>
-      	<div id="foot">
-      		<ul>
-      			<li><a class="margin" type="button" href="#">收藏</a></li>
-      			<li><a class="margin" href="#">转发</a></li>
-      			<li><a class="margin" href="#">评论</a></li>
-      			<li><a  id="zan" href="#" class="am-icon-thumbs-o-up"></a></li>
-      		</ul>
-      	</div>
-      </div>
-
-
-
-
-
-
-
-
-       </div>	
+<body>
+       <div id="head">
+              <div><img src="/images/log.png"></div>
+       </div> 
+       <div id="content">
+            <div id="left">
+                    <a href="">首页</a>
+                    <a href="">消息</a>
+                    <a href="">收藏</a>
+                    <a href="">赞</a>
+                </ul>
+            </div>
+            <div id="right">
+                <div><img src="images/info.png"></div>
+                 <div><textarea cols="70" rows="3"></textarea></div> 
+                 <div id="fabu"><button type="button" class="am-btn am-btn-warning">发布</button></div>
+                 <!-- -->
+                       <div id="blog">
+                          <div class="user_img"><img src="images/user1.jpg"></div>
+                          <div class="user_info">
+                                  <div><label><a href="">IT程序猿</a></label></br></div>
+                                  <div class="user_blog"><span>【什么是人脉】①人脉不是你利用多少人，而是你帮助多少人！②人脉不是多少人在面前吹捧你，而是多少人在背后称赞你！③人脉不是辉煌时多少人奉承你，而是落魄时多少人愿意帮助你！④人脉不是你认识多少人，而是多少人认识你！⑤人脉不是你和多少人打过交道，而是多少人愿意主动和你打交道！</span></div>
+                          </div>
+                          <div id="user_man">
+                              <a href="#">收藏</a>|
+                              <a href="#">转发</a>|
+                              <a id="pinglun" href="#">评论</a>|
+                              <a href="#" class="am-icon-thumbs-o-up">&nbsp;&nbsp;1</a>
+                          </div>
+                          <div id="comment">
+                                <img src="images/user1.jpg"><input type="text" class="" id="doc-ipt-pwd-1"><br>
+                                <button type="button" class="am-btn am-btn-warning">评论</button>
+                          </div>
+                          <div id="both"></div>
+                       </div>
+                 <!-- -->
+                 <!-- -->
+                       <div id="blog">
+                          <div class="user_img"><img src="images/user1.jpg"></div>
+                          <div class="user_info">
+                                  <div><label><a href="">IT程序猿</a></label></br></div>
+                                  <div class="user_blog"><span>【什么是人脉】①人脉不是你利用多少人，而是你帮助多少人！②人脉不是多少人在面前吹捧你，而是多少人在背后称赞你！③人脉不是辉煌时多少人奉承你，而是落魄时多少人愿意帮助你！④人脉不是你认识多少人，而是多少人认识你！⑤人脉不是你和多少人打过交道，而是多少人愿意主动和你打交道！</span></div>
+                          </div>
+                          <div id="user_man">
+                              <a href="#">收藏</a>|
+                              <a href="#">转发</a>|
+                              <a id="pinglun" href="#">评论</a>|
+                              <a href="#" class="am-icon-thumbs-o-up">&nbsp;&nbsp;1</a>
+                          </div>
+                          <div id="comment">
+                                <img src="images/user1.jpg"><input type="text" class="" id="doc-ipt-pwd-1"><br>
+                                <button type="button" class="am-btn am-btn-warning">评论</button>
+                          </div>
+                          <div id="both"></div>
+                       </div>
+                 <!-- -->
+            </div>     
+          <div style="clear:both"></div>
+       </div>
+       <div id="foot"></div>
 </body>
 </html>
