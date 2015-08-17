@@ -159,7 +159,10 @@
                           <div class="user_img"><img src="<%= blog[i].images%>"></div>
                           <div class="user_info">
                                   <div><label><a href=""><%= blog[i].name%></a></label></br></div>
-                                  <div class="user_blog"><%= blog[i].content%><%= blog[i].kk%></div>
+                                  <div class="user_blog">
+                                      <span><%= blog[i].content%></br></span>
+                                      <a class="miniImg artZoom" href="<%= blog[i].images_1%>" rel="<%= blog[i].images_1%>"><img src="<%= blog[i].images_1_1%>"/></a> 
+                                  </div>
                           </div>
                           <div id="user_man">
                               <a href="#">收藏</a>|
@@ -176,7 +179,7 @@
                        <%}%>
                  <!-- -->
 
-                 <!-- 
+                 <!--
                        <div id="blog">
                           <div class="user_img"><img src="images/user01.jpg"></div>
                           <div class="user_info">

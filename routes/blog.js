@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.fabu = function(req,res){
-//     var content = req.body.content;
-     collection.insert({"images":"images/user01.jpg","name":"牛客网","content":"如何给 2D 游戏添加光照？&lt;/br&gt;&lt;a class='miniImg artZoom' href='images/b2.jpg' rel='images/b2.jpg'&gt;&lt;img src='images/m2.jpg' /&gt;&lt;/a&gt; "},function(err,docs){
+     var content = req.body.content;
+     collection.insert({"images":"images/user01.jpg","name":"牛客网","content":content,"images_1":"images/b2.jpg","images_1_1":"images/m2.jpg"},function(err,docs){
           if(!err){
                if(docs!=""){
                     res.redirect("blog");
