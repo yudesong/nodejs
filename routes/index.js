@@ -25,8 +25,4 @@ router.login = function(db,collection){
      }
 };
 
-router.blog = function(req,res){
-     res.render("blog");
-};
-
 module.exports = router;

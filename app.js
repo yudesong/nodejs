@@ -8,6 +8,7 @@ var session = require("express-session");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var blog = require('./routes/blog');
 
 var app = express();
 
@@ -41,8 +42,8 @@ app.use("/delUser",users.delUser(collection));
 app.post("/editUser",users.editUser(collection));
 app.get("/user",users.user(collection));
 app.post("/findUser",users.findUser(collection));
-app.get("/blog",routes.blog);
-
+app.use("/blog",blog);
+app.use("/fabu",blog.fabu);
 
 
 //app.get("/addUser",users.addUser(collection));
