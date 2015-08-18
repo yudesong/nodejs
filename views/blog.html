@@ -18,12 +18,13 @@
     <style type="text/css">
     body{
     	 background: #white;
-        width:1000px;
+        width:950px;
         margin: 10px 120px;
     }
 
     #head{
         border-bottom: 1px solid #ccc;
+        background: #fefefe;
     }
 
     #content #left a{
@@ -111,7 +112,6 @@
     #comment img{
       width: 30px;
       height: 30px;
-      margin-top: 10px;
       margin-left: 10px;
     }
 
@@ -128,7 +128,7 @@
     }
 
   .comment-main{
-    display:inline-block;*display:inline;zoom:1;width:600px;margin:0 auto;
+    display:inline-block;*display:inline;zoom:1;width:600px;margin:0 0;
     text-align:left;
   }
   .comment-main textarea{width:100%;}
@@ -139,7 +139,14 @@
 </head>  
 <body>
        <div id="head">
-              <div><img src="/images/log.png"></div>
+              <div style="float:left;"><img src="/images/log.png"></div>
+              <div style="float:right;margin-top:10px;">
+                    <form method="post" action="/quit">
+                    <a href=""  class="am-icon-qq"><%= name%></a>
+                    <button type="submit" class="am-btn">退出</button>
+                    </form>
+              </div>
+              <div style="clear:both"></div>
        </div> 
        <div id="content">
             <div id="left">

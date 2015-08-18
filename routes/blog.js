@@ -6,11 +6,15 @@ var db = monk("localhost:27017/blogs");
 var collection = db.get("blogs.blogcollection");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+     if(req.session.user_id==undefined)
+          res.redirect("/");
+     else{
      collection.find({},function(err,docs){
      if(!err){
-          res.render("blog",{"blog":docs});
+          res.render("blog",{"blog":docs,"name":req.session.user_name});
      }
      });
+     }
 });
 
 router.fabu = function(req,res){

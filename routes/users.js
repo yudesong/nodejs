@@ -6,7 +6,11 @@ var db = monk("localhost:27017/users");
 var collection = db.get("usercollection");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+      if(req.session.user_id==undefined)
+          res.redirect("/");
+     else{
       getUser(req,res);
+     }
 });
 
 router.user = function(collection){

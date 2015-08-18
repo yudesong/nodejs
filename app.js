@@ -44,7 +44,7 @@ app.get("/user",users.user(collection));
 app.post("/findUser",users.findUser(collection));
 app.use("/blog",blog);
 app.use("/fabu",blog.fabu);
-
+app.use("/quit",routes.quit);
 
 //app.get("/addUser",users.addUser(collection));
 // catch 404 and forward to error handler

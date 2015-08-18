@@ -14,8 +14,10 @@ router.login = function(db,collection){
      	collection.find({"name":name,"passwd":passwd},function(err,docs){
      	if(!err){
      	       if(docs!=""){
-                           //        req.session.user = user;
-                                   console.log(req.session.user);
+                               //   console.log(docs[0].name);
+                                  req.session.user_id = docs[0]._id;
+                                  req.session.user_name = docs[0].name;
+                                   console.log(req.session.user_id);
      	       	res.redirect("/blog");
      	       }else{
      	       	res.redirect("/");
@@ -23,6 +25,12 @@ router.login = function(db,collection){
      	  }
      	});
      }
+};
+
+router.quit = function(req,res){
+       req.session.user_id = null;
+        res.redirect("/");
+
 };
 
 module.exports = router;
