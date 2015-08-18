@@ -47,7 +47,8 @@ router.doAddUser = function(collection){
           var sex = req.body.sex;
           var age = req.body.age;
           var passwd = req.body.passwd;
-          collection.insert({"name":name,"sex":sex,"age":age,"passwd":passwd},function(err,docs){
+          var image = req.body.image;
+          collection.insert({"name":name,"sex":sex,"age":age,"passwd":passwd,"image":image},function(err,docs){
                if(!err){
                     if(docs!=""){
                          res.redirect("users");
@@ -80,7 +81,8 @@ router.editUser = function(collection){
           var age = req.body.age;
           var _id = req.body._id;
           var passwd = req.body.passwd;
-          collection.update({"_id":_id},{"name":name,"sex":sex,"age":age,"passwd":passwd},function(err,docs){
+          var image = req.body.image;
+          collection.update({"_id":_id},{"name":name,"sex":sex,"age":age,"passwd":passwd,"image":image},function(err,docs){
                if(!err){
                     if(docs!=""){
                          res.redirect("users");

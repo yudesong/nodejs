@@ -17,6 +17,7 @@ router.login = function(db,collection){
                                //   console.log(docs[0].name);
                                   req.session.user_id = docs[0]._id;
                                   req.session.user_name = docs[0].name;
+                                  req.session.user_image = docs[0].image;
                                    console.log(req.session.user_id);
      	       	res.redirect("/blog");
      	       }else{

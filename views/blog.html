@@ -142,7 +142,7 @@
               <div style="float:left;"><img src="/images/log.png"></div>
               <div style="float:right;margin-top:10px;">
                     <form method="post" action="/quit">
-                    <a href=""  class="am-icon-qq"><%= name%></a>
+                    <a href=""><img src="<%= image%>" style="border-radius:78.5px 78.5px 78.5px 78.5px;" width="35" height="35"><%= name%></a>
                     <button type="submit" class="am-btn">退出</button>
                     </form>
               </div>
@@ -202,7 +202,7 @@
                           <div class="user_info">
                                   <div><label><a href=""><%= blog[i].name%></a></label></br></div>
                                   <div class="user_blog">
-                                      <span><%- blog[i].content%></br></span><br>
+                                      <%- blog[i].content%><br>
                                   </div>
                           </div>
                           <div id="user_man">
@@ -260,10 +260,9 @@
                        </div>
                        <%}%>
                  <!-- -->
-
-                 <!--
+                <!--
                        <div id="blog">
-                          <div class="user_img"><img src="images/user01.jpg"></div>
+                          <div class="user_img"><img src="images/user1.jpg"></div>
                           <div class="user_info">
                                   <div><label><a href="">牛客网</a></label></br></div>
                                   <div class="user_blog"><span>如何给 2D 游戏添加光照？</br></span> 
@@ -282,7 +281,7 @@
                           </div>
                           <div id="both"></div>
                        </div>
-                 -->
+                    -->
 
             </div>     
           <div style="clear:both"></div>
