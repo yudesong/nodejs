@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href="/stylesheets/style.css"/>    
+    <link rel='stylesheet' href="/stylesheets/amazeui.min.css"/>
+    <link rel='stylesheet' href="/stylesheets/lrtk.css"/>
+    <link rel='stylesheet' href="/stylesheets/rl_exp.css"/>
+    <script type="text/javascript" src="/javascripts/jquery-1.3.2.min.js"></script> 
+    <script type="text/javascript" src="/javascripts/amazeui.js"></script>
+    <script type="text/javascript" src="/javascripts/amazeui.ie8polyfill.js"></script>
+    <script type="text/javascript" src="/javascripts/amazeui.widgets.helper.js"></script>
+    <script type="text/javascript" src="/javascripts/amazeui.widgets.helper.js"></script>    
+    <script type="text/javascript" src="/javascripts/script.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-1.3.2.min.js"></script> 
+    <script type="text/javascript" src="/javascripts/artZoom.js"></script>
+    <script type="text/javascript" src="/javascripts/rl_exp.js"></script>
+    <script type="text/javascript">jQuery('a.artZoom').artZoom();</script>
+    <style type="text/css">
+    body{
+    	 background: #white;
+        width:1000px;
+        margin: 10px 120px;
+    }
+
+    #head{
+        border-bottom: 1px solid #ccc;
+    }
+
+    #content #left a{
+        color: white;
+        display: block;
+        padding-left: 25px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    #content #left a:hover{
+        background: #80b9db
+    }
+
+    #left{
+      float: left;
+      background: #63a6d1;
+      margin-top: 20px;
+      width: 150px;
+    }
+
+    #right{
+      float: left;
+      margin-left: 30px;
+      margin-top: 10px;
+    }
+
+    #both{
+      clear: both;
+    }
+
+    #blog{
+       font-size: 13px;
+       width: 660px;
+       padding:2px;
+    	margin-top: 20px;
+       margin-bottom: 2px;
+       border-top:2px dashed #ccc;
+    }
+
+    #blog .user_img{
+        float: left;
+        width: 80px;
+        height: 70px;
+    }
+
+    #blog .user_img img{
+      margin-top: 10px;
+      margin-left: 15px;
+      border-radius:78.5px 78.5px 78.5px 78.5px;
+    }
+
+    #blog .user_info{
+      float: left;
+      margin-top: 15px;
+    }
+
+    #blog .user_blog{
+      width: 570px;
+    }
+
+    #user_man a{
+      display: inline-block;
+      color: #000000;
+      width: 157px;
+      padding-left: 50px;
+    }
+
+    #user_man a:hover{
+      color: red;
+    }
+
+    #fabu{
+      margin-left: 100px;
+    }
+
+    #comment{
+      margin-left: 40px;
+      margin-top: 10px;
+      background: #f1f1f4;
+      padding:2px;
+      display: none;
+    }
+
+    #comment img{
+      width: 30px;
+      height: 30px;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    #comment input{
+      margin-left: 20px;
+      margin-top: 10px;
+      width: 530px;
+      height: 30px;
+    }
+
+    #comment button{
+      margin-left: 522px;
+      margin-top: 6px;
+    }
+
+  .comment-main{
+    display:inline-block;*display:inline;zoom:1;width:600px;margin:0 auto;
+    text-align:left;
+  }
+  .comment-main textarea{width:100%;}
+  .comment-main textarea:focus{outline:none;border-color:#4bf;}
+  .comment-main a{font-size:12px;text-decoration:none;color:#09c;}
+  .comment-main a:hover{color:#E10602;}
+    </style>
+</head>  
+<body>
+       <div id="head">
+              <div><img src="/images/log.png"></div>
+       </div> 
+       <div id="content">
+            <div id="left">
+                    <a href="">首页</a>
+                    <a href="">消息</a>
+                    <a href="">收藏</a>
+                    <a href="">赞</a>
+                </ul>
+            </div>
+            <div id="right">
+                <div><img src="images/info.png"></div>
+                <div class="comment-main">
+                      <form action="fabu" method="post">
+                      <div><textarea name="content" id="rl_exp_input" cols="100" rows="3"></textarea></div> 
+                      <div>
+                              <div style="float:left;">
+                               <a href="javascript:void(0);" id="rl_exp_btn"><img src="images/biaoqing.png">表情</a>
+                               <a href="javascript:void(0);" id="rl_exp_btn1"><img src="images/tupian.png">图片</a>
+                                <a href="javascript:void(0);" id="rl_exp_btn"><img src="images/shiping.png">视频</a>
+                              </div>
+                              <div style="float:left;margin-left:371px;margin-top:3px;">
+                                    <button type="submit" class="am-btn am-btn-warning">发布</button>
+                              </div>
+                              <div class="rl_exp" id="rl_bq" style="display:none">
+                                  <ul class="rl_exp_tab clearfix">
+                                        <li><a href="javascript:void(0);" class="selected">默认</a></li>
+                                        <li><a href="javascript:void(0);">拜年</a></li>
+                                        <li><a href="javascript:void(0);">浪小花</a></li>
+                                        <li><a href="javascript:void(0);">暴走漫画</a></li>
+                                  </ul>
+                                  <ul class="rl_exp_main clearfix rl_selected"></ul>
+                                  <ul class="rl_exp_main clearfix" style="display:none;"></ul>
+                                  <ul class="rl_exp_main clearfix" style="display:none;"></ul>
+                                  <ul class="rl_exp_main clearfix" style="display:none;"></ul>
+                                  <a href="javascript:void(0);" class="close">×</a>
+                              </div>   
+                              <div class="rl_exp" id="rl_bq1" style="display:none">
+                                  <input type="file" id="doc-ipt-file-1" name="file">
+                                  <p class="am-form-help">请选择要上传的文件...</p>
+                                  <div><a href="javascript:void(0);" class="close" style="color:red">X</a></div>
+                              </div>    
+                              <div style="clear:both"></div>
+                      </div>
+                      </form>
+                  </div>
+                 <%
+                      var i = 0;
+                      for(i;i<blog.length;i++){
+                  %>
+                 <!-- -->
+                       <div id="blog">
+                          <div class="user_img"><img src="<%= blog[i].images%>"></div>
+                          <div class="user_info">
+                                  <div><label><a href=""><%= blog[i].name%></a></label></br></div>
+                                  <div class="user_blog">
+                                      <span><%- blog[i].content%></br></span><br>
+                                  </div>
+                          </div>
+                          <div id="user_man">
+                              <a href="#">收藏</a>|
+                              <a href="#">转发</a>|
+                              <a id="pinglun" style="cursor:pointer">评论&nbsp;5</a>|
+                              <a href="#" class="am-icon-thumbs-o-up">&nbsp;&nbsp;0</a>
+                          </div>
+                          <div id="comment">
+                                <img src="images/user1.jpg"><input type="text" class="" id="doc-ipt-pwd-1"><br>
+                                <button type="button" class="am-btn am-btn-warning">评论</button>
+                                <div style="padding:3px;">
+                                  <div style="float:left"><img src="images/user01.jpg" width="100" height="100"></div>
+                                  <div style="float:left">
+                                      <div style="margin-top:5px;margin-left:5px;"><sapn style="color:red"><a href="">小小鱼</a>&nbsp;&nbsp;:愿逝者安息</sapn></div>
+                                      <div style="margin-left:5px;">&nbsp;&nbsp;12分钟之前</div>
+                                  </div>
+                                  <div style="clear:both"></div>
+                                </div>  
+                          </div>
+                          <div id="both"></div>
+                       </div>
+                       <%}%>
+                 <!-- -->
+
+                 <!--
+                       <div id="blog">
+                          <div class="user_img"><img src="images/user01.jpg"></div>
+                          <div class="user_info">
+                                  <div><label><a href="">牛客网</a></label></br></div>
+                                  <div class="user_blog"><span>如何给 2D 游戏添加光照？</br></span> 
+            <a class="miniImg artZoom" href="images/b2.jpg" rel="images/b2.jpg"><img src="images/m2.jpg" /></a> 
+                                  </div>
+                          </div>
+                          <div id="user_man">
+                              <a href="#">收藏</a>|
+                              <a href="#">转发</a>|
+                              <a id="pinglun" href="#">评论</a>|
+                              <a href="#" class="am-icon-thumbs-o-up">&nbsp;&nbsp;1</a>
+                          </div>
+                          <div id="comment">
+                                <img src="images/user1.jpg"><input type="text" class="" id="doc-ipt-pwd-1"><br>
+                                <button type="button" class="am-btn am-btn-warning">评论</button>
+                          </div>
+                          <div id="both"></div>
+                       </div>
+                 -->
+
+            </div>     
+          <div style="clear:both"></div>
+       </div>
+       <div id="foot"></div>
+</body>
+</html>
